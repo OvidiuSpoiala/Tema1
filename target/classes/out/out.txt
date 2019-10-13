@@ -1,0 +1,167 @@
+Initial mark: {P0=1, P1=0, P2=0, P3=0, P4=1, P5=0, P6=1, P7=0, P8=0, P9=0, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 3
+Transition T9 with duration 0
+Transition T6 with duration 4
+Transition T2 with duration 4
+Transition T4 with duration 0
+Transition T5 with duration 3
+Transition T1 with duration 1
+Transition T0 with duration 0
+Transition T7 with duration 4
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T0
+{P0=0, P1=1, P2=1, P3=0, P4=1, P5=0, P6=1, P7=0, P8=0, P9=0, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 2
+Transition T9 with duration 0
+Transition T6 with duration 3
+Transition T2 with duration 3
+Transition T4 with duration 0
+Transition T5 with duration 2
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 3
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T1
+{P0=0, P1=0, P2=1, P3=1, P4=1, P5=0, P6=1, P7=0, P8=0, P9=0, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 1
+Transition T9 with duration 0
+Transition T6 with duration 2
+Transition T2 with duration 2
+Transition T4 with duration 0
+Transition T5 with duration 1
+Transition T1 with duration 1
+Transition T0 with duration 0
+Transition T7 with duration 2
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T3
+{P0=0, P1=0, P2=1, P3=0, P4=0, P5=0, P6=1, P7=1, P8=0, P9=0, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 1
+Transition T2 with duration 1
+Transition T4 with duration 0
+Transition T5 with duration 0
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 1
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T5
+{P0=0, P1=0, P2=1, P3=0, P4=0, P5=0, P6=0, P7=0, P8=0, P9=1, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 0
+Transition T2 with duration 0
+Transition T4 with duration 0
+Transition T5 with duration 4
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 0
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T2
+{P0=0, P1=0, P2=0, P3=0, P4=0, P5=1, P6=0, P7=0, P8=0, P9=1, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 0
+Transition T2 with duration 4
+Transition T4 with duration 0
+Transition T5 with duration 3
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 0
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T7
+{P0=0, P1=0, P2=0, P3=0, P4=1, P5=1, P6=1, P7=0, P8=0, P9=0, P10=0, P12=0, P11=1, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 0
+Transition T2 with duration 3
+Transition T4 with duration 0
+Transition T5 with duration 2
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 4
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T4
+{P0=0, P1=0, P2=0, P3=0, P4=1, P5=0, P6=0, P7=0, P8=1, P9=0, P10=0, P12=0, P11=1, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 0
+Transition T2 with duration 2
+Transition T4 with duration 0
+Transition T5 with duration 1
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 3
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T6
+{P0=0, P1=0, P2=0, P3=0, P4=0, P5=0, P6=0, P7=0, P8=0, P9=0, P10=1, P12=0, P11=1, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 4
+Transition T2 with duration 1
+Transition T4 with duration 0
+Transition T5 with duration 0
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 2
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T8
+{P0=0, P1=0, P2=0, P3=0, P4=1, P5=0, P6=1, P7=0, P8=0, P9=0, P10=0, P12=1, P11=1, P13=0}
+Transition T8 with duration 2
+Transition T9 with duration 0
+Transition T6 with duration 3
+Transition T2 with duration 0
+Transition T4 with duration 0
+Transition T5 with duration 0
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 1
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T9
+{P0=0, P1=0, P2=0, P3=0, P4=1, P5=0, P6=1, P7=0, P8=0, P9=0, P10=0, P12=0, P11=0, P13=1}
+Transition T8 with duration 1
+Transition T9 with duration 0
+Transition T6 with duration 2
+Transition T2 with duration 0
+Transition T4 with duration 0
+Transition T5 with duration 0
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 0
+Transition T10 with duration 0
+Transition T3 with duration 0
+Execute transition: T10
+{P0=0, P1=0, P2=0, P3=0, P4=1, P5=0, P6=1, P7=0, P8=0, P9=0, P10=0, P12=0, P11=0, P13=0}
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 1
+Transition T2 with duration 0
+Transition T4 with duration 0
+Transition T5 with duration 0
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 0
+Transition T10 with duration 0
+Transition T3 with duration 0
+Transition T8 with duration 0
+Transition T9 with duration 0
+Transition T6 with duration 0
+Transition T2 with duration 0
+Transition T4 with duration 0
+Transition T5 with duration 0
+Transition T1 with duration 0
+Transition T0 with duration 0
+Transition T7 with duration 0
+Transition T10 with duration 0
+Transition T3 with duration 0
+Deadlock

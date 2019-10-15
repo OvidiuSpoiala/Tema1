@@ -17,7 +17,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class PetriNetSimulator {
-    private static Map<String, Integer> initialMark = new HashMap<String, Integer>();
+    private static Map<String, Integer> initialMark = new HashMap<>();
     private static Map<String, Integer> currentMark;
     private static PetriNet initialPetriNet = preparePetriNet(PetriNetLoader.loadPetriNet());
     private static File file;
@@ -67,13 +67,15 @@ public class PetriNetSimulator {
             }
         }
     }
+
     /**
      * Method which get all transitions that can be executed (that have enough tokens in previous place)
+     *
      * @param petriNet The Petri Net where to check for executable transitions
      * @return the list of executable transitions
      */
     private static List<Transition> getExecutableTransitions(PetriNet petriNet) {
-        List<Transition> executableTransitions = new ArrayList<Transition>();
+        List<Transition> executableTransitions = new ArrayList<>();
         for (Transition t : petriNet.getTransitions()) {
             //System.out.println(t.toString());
             appendStrToFile(t.toString() + "\n");
@@ -95,6 +97,7 @@ public class PetriNetSimulator {
     /**
      * Remove possible null Places, Transitions, Pres, Posts and generate the first random duration for
      * Transitions that have random duration
+     *
      * @param petriNet the Petri Net that have to be prepared
      * @return prepared Petri Net
      */
@@ -113,8 +116,9 @@ public class PetriNetSimulator {
     }
 
     /**
-     *  Get a Place from a Petri Net and a specified Pre
-     * @param pre the specified pre
+     * Get a Place from a Petri Net and a specified Pre
+     *
+     * @param pre      The specified pre
      * @param petriNet The Petri Net to get Place from
      * @return the required Place
      */
@@ -125,6 +129,7 @@ public class PetriNetSimulator {
     /**
      * Get the transition to be executed. Which mean the only transition with 0 duration
      * or a random one if there are more transitions to be executed with 0 duration
+     *
      * @param transitions The list of Transitions to chose from
      * @return the Transition to be executed
      */
@@ -139,11 +144,11 @@ public class PetriNetSimulator {
     /**
      * Execute a transition in a PetriNet. Move the tokens according with the costs from Pre and Post
      * and reset the duration of executed transition
+     *
      * @param transitionToBeExecuted The transition which have to be executed
-     * @param petriNet The Petri net where to execute the transition
-     * @return The mark after the transition is executed
+     * @param petriNet               The Petri net where to execute the transition
      */
-    private static Map<String, Integer> executeTransition(Transition transitionToBeExecuted, PetriNet petriNet) {
+    private static void executeTransition(Transition transitionToBeExecuted, PetriNet petriNet) {
         System.out.println("Execute transition: " + transitionToBeExecuted.getName());
         List<Pre> transitionPres = petriNet.getPres().stream().filter(pre -> pre.getDestinationTransitionName().equals(transitionToBeExecuted.getName())).collect(Collectors.toList());
         List<Post> transitionPosts = petriNet.getPosts().stream().filter(post -> post.getStartTransitionName().equals(transitionToBeExecuted.getName())).collect(Collectors.toList());
@@ -157,16 +162,17 @@ public class PetriNetSimulator {
             petriNet.getTransitions().stream().filter(transition -> transition.getName().equals(transitionToBeExecuted.getName())).forEach(transition -> transition.setDuration((int) ((Math.random() * ((transition.getMaxDuration() - transition.getMinDuration()) + 1)) + transition.getMinDuration())));
         }
         if (transitionToBeExecuted.isTimed() && transitionToBeExecuted.getMinDuration() == null) {
+            //no inspection OptionalGetWithoutIsPresent
             petriNet.getTransitions().stream().filter(transition -> transition.getName().equals(transitionToBeExecuted.getName())).forEach(transition -> transition.setDuration(initialPetriNet.getTransitions().stream().filter(transition1 -> transition1.getName().equals(transitionToBeExecuted.getName())).findFirst().get().getDuration()));
         }
-        return currentMark;
     }
 
     /**
      * Check if the current mark is the same as initial mark
-     * @param initialMark
-     * @param currentMark
-     * @return
+     *
+     * @param initialMark first mark
+     * @param currentMark second mark
+     * @return true if are equal of false otherwise
      */
     private static boolean checkReturnToInitialMark(Map<String, Integer> initialMark, Map<String, Integer> currentMark) {
         return initialMark.equals(currentMark);
@@ -174,9 +180,10 @@ public class PetriNetSimulator {
 
     /**
      * Append a String to a file... out.txt
+     *
      * @param str the String to be appended
      */
-    public static void appendStrToFile(String str) {
+    private static void appendStrToFile(String str) {
         try {
             Files.write(Paths.get(file.getCanonicalPath()), str.getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {

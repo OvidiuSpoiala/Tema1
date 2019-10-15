@@ -2,9 +2,11 @@ package loader;
 
 import com.google.gson.Gson;
 import model.PetriNet;
-import model.components.Pre;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
 import java.net.URISyntaxException;
 import java.net.URL;
 
@@ -15,15 +17,14 @@ public class PetriNetLoader {
 
     /**
      * Load the Petri Net from /in/loadPetriNet.txt
+     *
      * @return the loaded Petri Net
      */
     public static PetriNet loadPetriNet() {
         try {
             URL url = PetriNetLoader.class.getResource("/in/loadPetriNet.txt");
             reader = new FileReader(new File(url.toURI()));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (URISyntaxException e) {
+        } catch (FileNotFoundException | URISyntaxException e) {
             e.printStackTrace();
         }
         petriNet = gson.fromJson(reader, PetriNet.class);

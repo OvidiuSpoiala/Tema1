@@ -1,6 +1,6 @@
 package model.components;
 
-public class Post extends Link{
+public class Post extends Link {
     private String destinationPlaceName;
     private String startTransitionName;
 

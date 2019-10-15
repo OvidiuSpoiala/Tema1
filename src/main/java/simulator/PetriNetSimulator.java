@@ -162,7 +162,7 @@ public class PetriNetSimulator {
             petriNet.getTransitions().stream().filter(transition -> transition.getName().equals(transitionToBeExecuted.getName())).forEach(transition -> transition.setDuration((int) ((Math.random() * ((transition.getMaxDuration() - transition.getMinDuration()) + 1)) + transition.getMinDuration())));
         }
         if (transitionToBeExecuted.isTimed() && transitionToBeExecuted.getMinDuration() == null) {
-            //no inspection OptionalGetWithoutIsPresent
+            //noinspection OptionalGetWithoutIsPresent
             petriNet.getTransitions().stream().filter(transition -> transition.getName().equals(transitionToBeExecuted.getName())).forEach(transition -> transition.setDuration(initialPetriNet.getTransitions().stream().filter(transition1 -> transition1.getName().equals(transitionToBeExecuted.getName())).findFirst().get().getDuration()));
         }
     }

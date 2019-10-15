@@ -12,7 +12,6 @@ import java.net.URL;
 
 public class PetriNetLoader {
     private static Gson gson = new Gson();
-    private static PetriNet petriNet;
     private static Reader reader;
 
     /**
@@ -27,7 +26,6 @@ public class PetriNetLoader {
         } catch (FileNotFoundException | URISyntaxException e) {
             e.printStackTrace();
         }
-        petriNet = gson.fromJson(reader, PetriNet.class);
-        return petriNet;
+        return gson.fromJson(reader, PetriNet.class);
     }
 }

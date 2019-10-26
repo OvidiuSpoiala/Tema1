@@ -5,7 +5,7 @@ pipeline {
       steps {
           echo 'Build application'
           sh '${mvnHome}/bin/mvn clean install -DskipTests'
-          sh java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
+          sh 'java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
       }
     }
 

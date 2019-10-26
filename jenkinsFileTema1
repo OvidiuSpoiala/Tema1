@@ -1,23 +1,17 @@
 pipeline {
   agent any
-tools {
-        maven_home = maven 'Maven'
-        java_home = jdk 'Java8'
-    }
   stages {
   stage ('Initialize') {
               steps {
-                  sh '''
-                      echo "PATH = ${PATH}"
-                      echo "M2_HOME = ${M2_HOME}"
-                  '''
+                  def mvnHome = tool name: 'Maven', type: 'maven'
+                  def mvnHome = tool name: 'Java8', type: 'jdk'
               }
           }
     stage('Build project') {
       steps {
           echo 'Build application'
-          sh '$maven_home/bin/mvn mvn clean install -DskipTests'
-          sh '$java_home/bin java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
+          sh '${mvnHome}/bin/mvn clean install -DskipTests'
+          sh '${java_home}/bin java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
       }
     }
 

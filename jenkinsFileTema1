@@ -2,11 +2,16 @@ pipeline {
   agent any
   stages {
     stage('Build project') {
+    agent{
+        docker{
+            image 'maven:3.6.2-jdk-8'
+            args '-v /root/.m2:/root/.m2 --net=host'
+        }
+    }
       steps {
           echo 'Build application'
           echo '${mvnHome}'
-          sh '${mvnHome}/bin/mvn clean install -DskipTests'
-          sh 'java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
+          sh 'mvn clean install -DSkipTests'
       }
     }
 

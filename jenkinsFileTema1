@@ -1,8 +1,8 @@
 pipeline {
   agent any
 tools {
-        maven 'Maven'
-        jdk 'Java8'
+        maven_home = maven 'Maven'
+        java_home = jdk 'Java8'
     }
   stages {
   stage ('Initialize') {
@@ -16,8 +16,8 @@ tools {
     stage('Build project') {
       steps {
           echo 'Build application'
-          sh 'mvn clean install -DskipTests'
-          sh 'java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
+          sh '$maven_home/bin/mvn mvn clean install -DskipTests'
+          sh '$java_home/bin java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
       }
     }
 

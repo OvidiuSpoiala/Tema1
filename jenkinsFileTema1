@@ -1,14 +1,11 @@
 pipeline {
   agent any
   stages {
-  stage ('Initialize') {
-            def java_home = tool name: 'Java8', type: 'jdk'
-          }
     stage('Build project') {
       steps {
           echo 'Build application'
           sh '${mvnHome}/bin/mvn clean install -DskipTests'
-          sh '${java_home}/bin java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
+          sh java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
       }
     }
 

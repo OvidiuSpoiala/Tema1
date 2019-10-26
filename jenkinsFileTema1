@@ -1,9 +1,6 @@
 pipeline {
   agent none
 
-  environment {
-  }
-
   stages {
     stage('Build project') {
       agent {
@@ -27,14 +24,12 @@ pipeline {
     }
 
     stage('Deploy') {
+        agent any
     	steps {
     	echo 'Now deploy'
     	sh 'java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
-         }
-
     	echo 'Succesfully deployed'
+         }
        }
     }
-    post {
-     }
 }

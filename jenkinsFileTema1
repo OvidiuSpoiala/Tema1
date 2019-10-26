@@ -1,0 +1,40 @@
+pipeline {
+  agent none
+
+  environment {
+  }
+
+  stages {
+    stage('Build project') {
+      agent {
+              docker {
+                  image 'maven:3.5.2-jdk-8'
+                  args '-v /root/.m2:/root/.m2'
+              }
+      }
+      steps {
+          echo 'Build application'
+          sh 'mvn clean install -DskipTests'
+      }
+    }
+
+    stage('Docker Build WebApp') {
+      agent any
+      steps {
+         sh 'mkdir -p ./tmp'
+         sh 'cp ./target/Tema1-1.0-SNAPSHOT.jar ./tmp'
+      }
+    }
+
+    stage('Deploy') {
+    	steps {
+    	echo 'Now deploy'
+    	sh 'java -jar ./tmp/Tema1-1.0-SNAPSHOT.jar'
+         }
+
+    	echo 'Succesfully deployed'
+       }
+    }
+    post {
+     }
+}

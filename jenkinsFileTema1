@@ -3,7 +3,7 @@ pipeline {
   stages {
   stage ('Initialize') {
               steps {
-                  def mvnHome = tool name: 'Java8', type: 'jdk'
+                  def java_home = tool name: 'Java8', type: 'jdk'
               }
           }
     stage('Build project') {

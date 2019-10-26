@@ -1,13 +1,14 @@
 pipeline {
   agent any
-  environment{
-    def dockerHome = tool 'MyDocker'
-    def mavenHome  = tool 'MyMaven'
-    def javaHome = tool 'MyJava8'
-    env.PATH = '${dockerHome}/bin:${mavenHome}/bin:${javaHome}/bin${env.PATH}'
-  }
   stages {
+
     stage('Build project') {
+    agent {
+                  docker {
+                      image 'maven:3.5.2-jdk-8'
+                      args '-v /root/.m2:/root/.m2'
+                  }
+          }
       steps {
           echo 'Build application'
           sh 'mvn clean install -DSkipTests'

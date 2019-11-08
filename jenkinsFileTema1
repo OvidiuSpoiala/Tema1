@@ -21,7 +21,7 @@ agent none
           docker {
               image 'openjdk:8'
               
-          }
+          }}
     	steps {
     	echo 'Now deploy'
     	sh 'java -jar target/Tema1-1.0-SNAPSHOT.jar'

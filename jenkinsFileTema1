@@ -2,14 +2,15 @@ pipeline {
 agent none
   
   stages {
-  agent {
+  
+
+    stage('Build project') {
+    agent {
           docker {
               image 'maven:3.5.2-jdk-8'
               args '-v /root/.m2:/root/.m2'
           }
-      }
-
-    stage('Build project') {
+      }`
       steps {
           echo 'Build application'
           sh 'mvn clean install -DSkipTests'
